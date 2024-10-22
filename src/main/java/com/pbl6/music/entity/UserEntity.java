@@ -18,7 +18,7 @@ public class UserEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "created_by")
     private String createdBy;
     @Column(nullable = false)
