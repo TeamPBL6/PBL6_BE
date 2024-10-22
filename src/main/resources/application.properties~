@@ -12,6 +12,7 @@ spring.web.resources.cache.period=0
 # DDL generation
 spring.jpa.generate-ddl=true
 spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.jdbc.time_zone=UTC
 
 vnpay.tmnCode=I2NVFZ38
 vnpay.hashSecret=KX9RZIOTYJQP78JXUF70C0FRWH5BU3G4

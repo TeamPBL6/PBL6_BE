@@ -27,6 +27,8 @@ public enum ErrorCode {
     UPDATE_SUCCESSFUL(1013, "Update successful", HttpStatus.OK),
     INVALID_DATA(1014, "Invalid data", HttpStatus.BAD_REQUEST),
     FULL_NAME_INVALID(1014, "Full name must be not blank", HttpStatus.BAD_REQUEST),
+    MUSIC_NOT_FOUND(1015, "MUSIC not found", HttpStatus.NOT_FOUND),
+
     ;
 
     Integer code;
