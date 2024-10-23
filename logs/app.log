@@ -1,6 +1,6 @@
 2024-10-21 09:43:01.782 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-10-21 09:43:01.873 [main] INFO  com.pbl6.music.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 21604 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
-2024-10-21 09:43:01.882 [main] INFO  com.pbl6.music.TechlearnApplication - The following 1 profile is active: "dev"
+2024-10-21 09:43:01.873 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 21604 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
+2024-10-21 09:43:01.882 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - The following 1 profile is active: "dev"
 2024-10-21 09:43:03.150 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-21 09:43:03.243 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interface.
 2024-10-21 09:43:04.018 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
@@ -21,14 +21,14 @@
 2024-10-21 09:43:06.089 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
 2024-10-21 09:43:06.172 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
 2024-10-21 09:43:06.629 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-21 09:43:07.048 [main] ERROR org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Property 'com.pbl6.music.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
-2024-10-21 09:43:07.048 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.pbl6.music.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
+2024-10-21 09:43:07.048 [main] ERROR org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: Property 'com.pbl6.musicEntity.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
+2024-10-21 09:43:07.048 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.pbl6.musicEntity.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
 2024-10-21 09:43:07.052 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
 2024-10-21 09:43:07.067 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-10-21 09:43:07.088 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.pbl6.music.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Property 'com.pbl6.musicEntity.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
@@ -44,8 +44,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.3.jar:3.3.3]
-	at com.pbl6.music.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
-Caused by: org.hibernate.AnnotationException: Property 'com.pbl6.music.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
+	at com.pbl6.musicEntity.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
+Caused by: org.hibernate.AnnotationException: Property 'com.pbl6.musicEntity.entity.UserEntity.role' is annotated '@Enumerated' but its type 'java.lang.String' is not an enum
 	at org.hibernate.boot.model.internal.BasicValueBinder.prepareBasicAttribute(BasicValueBinder.java:814) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
 	at org.hibernate.boot.model.internal.BasicValueBinder.setType(BasicValueBinder.java:384) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
 	at org.hibernate.boot.model.internal.PropertyBinder.makePropertyAndValue(PropertyBinder.java:260) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
@@ -73,8 +73,8 @@ Caused by: org.hibernate.AnnotationException: Property 'com.pbl6.music.entity.Us
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
 	... 15 more
 2024-10-21 09:43:42.845 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-10-21 09:43:42.889 [main] INFO  com.pbl6.music.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 9572 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
-2024-10-21 09:43:42.896 [main] INFO  com.pbl6.music.TechlearnApplication - The following 1 profile is active: "dev"
+2024-10-21 09:43:42.889 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 9572 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
+2024-10-21 09:43:42.896 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - The following 1 profile is active: "dev"
 2024-10-21 09:43:43.680 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-21 09:43:43.734 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
 2024-10-21 09:43:44.263 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
@@ -115,7 +115,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.3.jar:3.3.3]
-	at com.pbl6.music.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
+	at com.pbl6.musicEntity.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
 Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [category]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.1.12.jar:6.1.12]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
@@ -146,8 +146,8 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
 	... 15 more
 2024-10-21 09:44:46.838 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-10-21 09:44:46.911 [main] INFO  com.pbl6.music.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 21104 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
-2024-10-21 09:44:46.918 [main] INFO  com.pbl6.music.TechlearnApplication - The following 1 profile is active: "dev"
+2024-10-21 09:44:46.911 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 21104 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
+2024-10-21 09:44:46.918 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - The following 1 profile is active: "dev"
 2024-10-21 09:44:48.036 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-21 09:44:48.110 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
 2024-10-21 09:44:48.806 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
@@ -188,7 +188,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.3.jar:3.3.3]
-	at com.pbl6.music.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
+	at com.pbl6.musicEntity.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
 Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [category]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.1.12.jar:6.1.12]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
@@ -219,8 +219,8 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
 	... 15 more
 2024-10-21 09:45:45.896 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-10-21 09:45:45.952 [main] INFO  com.pbl6.music.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 23576 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
-2024-10-21 09:45:45.959 [main] INFO  com.pbl6.music.TechlearnApplication - The following 1 profile is active: "dev"
+2024-10-21 09:45:45.952 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 23576 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
+2024-10-21 09:45:45.959 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - The following 1 profile is active: "dev"
 2024-10-21 09:45:46.824 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-21 09:45:46.898 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
 2024-10-21 09:45:47.423 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
@@ -261,7 +261,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.3.jar:3.3.3]
-	at com.pbl6.music.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
+	at com.pbl6.musicEntity.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
 Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [category]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.1.12.jar:6.1.12]
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
@@ -292,8 +292,8 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
 	... 15 more
 2024-10-21 09:47:33.493 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
-2024-10-21 09:47:33.546 [main] INFO  com.pbl6.music.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 15528 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
-2024-10-21 09:47:33.552 [main] INFO  com.pbl6.music.TechlearnApplication - The following 1 profile is active: "dev"
+2024-10-21 09:47:33.546 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - Starting TechlearnApplication using Java 21.0.3 with PID 15528 (D:\resfull\PBL6\PBL6_BE\target\classes started by LENOVO in D:\resfull\PBL6\PBL6_BE)
+2024-10-21 09:47:33.552 [main] INFO  com.pbl6.musicEntity.TechlearnApplication - The following 1 profile is active: "dev"
 2024-10-21 09:47:34.347 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-21 09:47:34.415 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 1 JPA repository interface.
 2024-10-21 09:47:34.942 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
@@ -303,7 +303,7 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 2024-10-21 09:47:35.013 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
 2024-10-21 09:47:35.014 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1412 ms
 2024-10-21 09:47:35.695 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/PBL6 (MySQL 8.0)
-2024-10-21 09:47:35.789 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flyway' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flyway' defined in class path resource [com/pbl6/music/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
+2024-10-21 09:47:35.789 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flyway' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flyway' defined in class path resource [com/pbl6/musicEntity/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
 Migration checksum mismatch for migration version 0
 -> Applied to database : 2142737212
 -> Resolved locally    : 1199568422
@@ -314,7 +314,7 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-10-21 09:47:35.818 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flyway' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flyway' defined in class path resource [com/pbl6/music/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flyway' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flyway' defined in class path resource [com/pbl6/musicEntity/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
 Migration checksum mismatch for migration version 0
 -> Applied to database : 2142737212
 -> Resolved locally    : 1199568422
@@ -330,8 +330,8 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.3.jar:3.3.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.3.jar:3.3.3]
-	at com.pbl6.music.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flyway' defined in class path resource [com/pbl6/music/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
+	at com.pbl6.musicEntity.TechlearnApplication.main(TechlearnApplication.java:10) [classes/:?]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flyway' defined in class path resource [com/pbl6/musicEntity/config/FlywayConfig.class]: Failed to instantiate [org.flywaydb.core.Flyway]: Factory method 'flyway' threw exception with message: Validate failed: Migrations have failed validation
 Migration checksum mismatch for migration version 0
 -> Applied to database : 2142737212
 -> Resolved locally    : 1199568422
@@ -377,12 +377,12 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:160) ~[flyway-core-10.10.0.jar:?]
 	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:205) ~[flyway-core-10.10.0.jar:?]
 	at org.flywaydb.core.Flyway.migrate(Flyway.java:147) ~[flyway-core-10.10.0.jar:?]
-	at com.pbl6.music.config.FlywayConfig.flyway(FlywayConfig.java:40) ~[classes/:?]
-	at com.pbl6.music.config.FlywayConfig$$SpringCGLIB$$0.CGLIB$flyway$1(<generated>) ~[classes/:?]
-	at com.pbl6.music.config.FlywayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:?]
+	at com.pbl6.musicEntity.config.FlywayConfig.flyway(FlywayConfig.java:40) ~[classes/:?]
+	at com.pbl6.musicEntity.config.FlywayConfig$$SpringCGLIB$$0.CGLIB$flyway$1(<generated>) ~[classes/:?]
+	at com.pbl6.musicEntity.config.FlywayConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:?]
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-6.1.12.jar:6.1.12]
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348) ~[spring-context-6.1.12.jar:6.1.12]
-	at com.pbl6.music.config.FlywayConfig$$SpringCGLIB$$0.flyway(<generated>) ~[classes/:?]
+	at com.pbl6.musicEntity.config.FlywayConfig$$SpringCGLIB$$0.flyway(<generated>) ~[classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146) ~[spring-beans-6.1.12.jar:6.1.12]

@@ -1,14 +1,12 @@
-//package com.pbl6.music.service;
-//
+package com.pbl6.music.service;
+
 //import com.pbl6.music.dto.request.UserRequestDTO;
 //import com.pbl6.music.dto.response.PageResponse;
 //import com.pbl6.music.dto.response.UserResponseDTO;
-//import org.springframework.stereotype.Service;
-//
-//import java.util.UUID;
-//
-//@Service
-//public interface UserService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface IUserService {
 //
 //    UserResponseDTO getUserById(UUID id);
 //
@@ -19,4 +17,4 @@
 //    void deleteUser(UUID id);
 //
 //    PageResponse<?> getAllUser(int page, int pageSize);
-//}
+}

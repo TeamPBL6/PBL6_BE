@@ -1,4 +1,4 @@
-package com.pbl6.music.util;
+package com.pbl6.music.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
 //package com.pbl6.music.controller;
 //
 //import com.pbl6.music.dto.request.UserRequestDTO;
-//import com.pbl6.music.service.UserService;
-//import com.pbl6.music.util.ErrorCode;
+//import com.pbl6.music.service.IUserService;
+//import com.pbl6.music.exception.ErrorCode;
 //import com.pbl6.music.util.ResponseData;
 //import jakarta.validation.Valid;
 //import lombok.AccessLevel;
@@ -19,7 +19,7 @@
 //@RequestMapping("/api/v1/users")
 //public class UserController {
 //
-//    UserService userService;
+//    IUserService userService;
 //
 //    @GetMapping
 //    public ResponseData<?> getAllUser(@RequestParam(required = false, defaultValue = "1") int page,

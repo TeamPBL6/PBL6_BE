@@ -1,6 +1,5 @@
 package com.pbl6.music.entity;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,19 +11,22 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "purchase")
-public class Purchase {
+@Table(
+    name = "purchases",
+    uniqueConstraints = @UniqueConstraint(columnNames = "music_id") // Đảm bảo một bản nhạc chỉ có một giao dịch
+)
+public class PurchaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long purchaseId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private UserEntity user;
+    private UserEntity buyer;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "music_id", nullable = false)
-    private Music music;
+    private MusicEntity musicEntity;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)

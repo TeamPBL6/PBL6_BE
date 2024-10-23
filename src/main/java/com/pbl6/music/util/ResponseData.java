@@ -32,11 +32,13 @@ public class ResponseData<T> {
     Map<String, Object> additionalProperties = new HashMap<>();
 
     public void additionalProperty(String key, Object value) {
+
         this.additionalProperties.put(key, value);
     }
 
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
+
         return this.additionalProperties;
     }
 

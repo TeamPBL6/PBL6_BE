@@ -1,5 +1,6 @@
-package com.pbl6.music.util;
+package com.pbl6.music.exception;
 
+import com.pbl6.music.util.ResponseData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,8 @@ public class GlobalExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler(value = AppException.class)
-    ResponseEntity<ResponseData> handlingAppException(AppException exception, WebRequest request) {
+    @ExceptionHandler(value = ApiException.class)
+    ResponseEntity<ResponseData> handlingAppException(ApiException exception, WebRequest request) {
         ResponseData error = new ResponseData();
         response(request, error);
         error.setError("Data Invalid");
