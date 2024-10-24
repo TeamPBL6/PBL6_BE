@@ -14,9 +14,11 @@ import java.util.UUID;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserResponseDTO implements Serializable {
-     int id;
-     String fullName;
-     String email;
-     String phoneNumber;
-     String address;
+     private Long id;
+     private String username;
+     private String email;
+     private String fullName;
+     private String phoneNumber;
+     private String address;
+     private String role;
 }

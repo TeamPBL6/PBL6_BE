@@ -12,8 +12,13 @@ spring.web.resources.cache.period=0
 # DDL generation
 spring.jpa.generate-ddl=true
 spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.jdbc.time_zone=UTC
 
 vnpay.tmnCode=I2NVFZ38
 vnpay.hashSecret=KX9RZIOTYJQP78JXUF70C0FRWH5BU3G4
 vnpay.payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+
+# JWT Configuration
+app.jwt.secret=yourVeryLongSecretKey
+app.jwt.expirationMs=86400000
+app.jwt.tokenPrefix=Bearer 
+app.jwt.headerString=Authorization

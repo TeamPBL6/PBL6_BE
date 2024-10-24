@@ -16,7 +16,7 @@ public interface UserMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createdAt", expression = "java(new java.util.Date())")
-    @Mapping(target = "role", constant = "ROLE_USER")
+    @Mapping(target = "role", constant = "role")
     @Mapping(target = "purchases", ignore = true)
     UserEntity toEntity(UserRegisterRequest request);
 
