@@ -26,7 +26,7 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<APIResponse<List<CategoryDTO>>> getAll() {
-        List<CategoryDTO> categories = categoryService.getAllCategories();
+        List<CategoryDTO> categories = categoryService.getAllCategory();
         return JsonResponse.ok(categories);
     }
 

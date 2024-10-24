@@ -19,7 +19,7 @@ public class CategoryServiceImpl implements ICategoryService {
 
     CategoryMapper categoryMapper;
 
-    public List<CategoryDTO> getAllCategories() {
+    public List<CategoryDTO> getAllCategory() {
         List<CategoryEntity> categories = categoryRepository.findAll();
         return categories.stream().map(categoryMapper::toCategoryDTO).toList();
     }

@@ -6,6 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICategoryService {
-    List<CategoryDTO> getAllCategories();
+    List<CategoryDTO> getAllCategory();
     Optional<CategoryDTO> findByCategoryId(Long categoryId);
 }

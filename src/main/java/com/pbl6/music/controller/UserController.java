@@ -1,26 +1,27 @@
-//package com.pbl6.music.controller;
-//
+package com.pbl6.music.controller;
+
 //import com.pbl6.music.dto.request.UserRequestDTO;
-//import com.pbl6.music.service.IUserService;
-//import com.pbl6.music.exception.ErrorCode;
-//import com.pbl6.music.util.ResponseData;
-//import jakarta.validation.Valid;
-//import lombok.AccessLevel;
-//import lombok.RequiredArgsConstructor;
-//import lombok.experimental.FieldDefaults;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.UUID;
-//
-//@RestController
-//@RequiredArgsConstructor
-//@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-//@RequestMapping("/api/v1/users")
-//public class UserController {
-//
-//    IUserService userService;
-//
+
+
+import com.pbl6.music.service.IUserService;
+import com.pbl6.music.exception.ErrorCode;
+import com.pbl6.music.util.ResponseData;
+import jakarta.validation.Valid;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
+
+@RestController
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@RequestMapping("/api/v1/users")
+public class UserController {
+
+    IUserService userService;
 //    @GetMapping
 //    public ResponseData<?> getAllUser(@RequestParam(required = false, defaultValue = "1") int page,
 //                                      @RequestParam(required = false, defaultValue = "10") int pageSize) {
@@ -72,5 +73,8 @@
 //                .message("Delete user success")
 //                .build();
 //    }
-//
-//}
+
+
+
+
+}

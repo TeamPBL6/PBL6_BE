@@ -7,6 +7,7 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface MusicMapper {
+
 //    @Mapping(source = "composer.fullName", target = "composerFullName")
 //    @Mapping(source = "category.name", target = "categoryName")
 //    @Mapping(source = "composer.id", target = "composerId")
