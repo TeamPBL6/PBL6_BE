@@ -24,5 +24,10 @@ INSERT INTO purchase (user_id, music_id, purchase_date, amount)
 VALUES
     (1, 2, NOW(), 12.99),
     (1, 3, NOW(), 7.99);
+INSERT INTO wallets (user_id, balance, updated_at)
+VALUES
+    (1, 100.00, NOW()),  -- Ví của John Doe
+    (2, 200.00, NOW()),  -- Ví của Jane Doe
+    (3, 50.00, NOW());   -- Ví của Michael Smith
 
 

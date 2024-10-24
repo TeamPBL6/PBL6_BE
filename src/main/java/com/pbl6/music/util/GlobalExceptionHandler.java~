@@ -68,5 +68,5 @@ public class GlobalExceptionHandler {
         error.setStatus(HttpStatus.BAD_REQUEST.value());
         error.setPath(request.getDescription(false).replace("uri=", ""));
     }
-
+    
 }

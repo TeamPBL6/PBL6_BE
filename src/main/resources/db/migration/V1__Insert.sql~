@@ -1,5 +1,5 @@
 INSERT INTO user
-(created_by, created_date, modified_date, modified_by, username, email, password, role, full_name, phone_number, address, created_at)
+(id,created_by, created_date, modified_date, modified_by, username, email, password, role, full_name, phone_number, address, created_at)
 VALUES
     (1,'admin', '2024-10-01 12:00:00', NULL, NULL, 'john_doe', 'john.doe@example.com', 'password123', 'USER', 'John Doe', '123456789', '123 Main St', '2024-10-01 12:00:00'),
     (2,'admin', '2024-10-01 12:00:00', NULL, NULL, 'jane_doe', 'jane.doe@example.com', 'password456', 'ADMIN', 'Jane Doe', '987654321', '456 Elm St', '2024-10-01 12:00:00'),

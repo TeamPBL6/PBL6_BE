@@ -61,3 +61,17 @@ ALTER TABLE music
 
 ALTER TABLE music
     ADD CONSTRAINT FK_MUSIC_ON_COMPOSER FOREIGN KEY (composer_id) REFERENCES user (id);
+CREATE TABLE wallets
+(
+    wallet_id  BIGINT AUTO_INCREMENT NOT NULL,
+    user_id    BIGINT                NOT NULL,
+    balance    DOUBLE                NOT NULL,
+    updated_at datetime              NOT NULL,
+    CONSTRAINT pk_wallets PRIMARY KEY (wallet_id)
+);
+
+ALTER TABLE wallets
+    ADD CONSTRAINT uc_wallets_user UNIQUE (user_id);
+
+ALTER TABLE wallets
+    ADD CONSTRAINT FK_WALLETS_ON_USER FOREIGN KEY (user_id) REFERENCES user (id);
