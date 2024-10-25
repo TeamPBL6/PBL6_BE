@@ -1,9 +1,9 @@
-INSERT INTO user
-(id,created_by, created_date, modified_date, modified_by, username, email, password, role, full_name, phone_number, address, created_at)
+-- Chèn dữ liệu vào bảng users
+INSERT INTO user (id,created_by, created_date, modified_date, modified_by, username, email, password, full_name, role, phone_number)
 VALUES
-    (1,'admin', '2024-10-01 12:00:00', NULL, NULL, 'john_doe', 'john.doe@example.com', 'password123', 'USER', 'John Doe', '123456789', '123 Main St', '2024-10-01 12:00:00'),
-    (2,'admin', '2024-10-01 12:00:00', NULL, NULL, 'jane_doe', 'jane.doe@example.com', 'password456', 'ADMIN', 'Jane Doe', '987654321', '456 Elm St', '2024-10-01 12:00:00'),
-    (3,'admin', '2024-10-01 12:00:00', NULL, NULL, 'michael_smith', 'michael.smith@example.com', 'password789', 'USER', 'Michael Smith', '555666777', '789 Oak St', '2024-10-01 12:00:00');
+    (1,'admin', NOW(), NULL, NULL, 'john_doe', 'john.doe@example.com', 'password123', 'John Doe', 'user', '123456789'),
+    (2,'admin', NOW(), NULL, NULL, 'jane_doe', 'jane.doe@example.com', 'password456', 'Jane Doe', 'admin', '987654321'),
+    (3,'admin', NOW(), NULL, NULL, 'michael_smith', 'michael.smith@example.com', 'password789', 'Michael Smith', 'user', '555666777');
 
 
 INSERT INTO category (id, name)

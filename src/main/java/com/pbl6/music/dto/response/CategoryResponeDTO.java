@@ -1,16 +1,14 @@
 package com.pbl6.music.dto.response;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
+import lombok.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class CategoryResponeDTO {
-     Long id;
-     String name;
+    private Long categoryIdResponseDTO;
+    private String categoryNameResponseDTO;
 }
+

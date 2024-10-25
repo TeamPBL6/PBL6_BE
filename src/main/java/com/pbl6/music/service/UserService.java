@@ -1,22 +1,13 @@
 package com.pbl6.music.service;
 
-import com.pbl6.music.dto.request.UserRequestDTO;
-import com.pbl6.music.dto.response.PageResponse;
-import com.pbl6.music.dto.response.UserResponseDTO;
 import com.pbl6.music.entity.UserEntity;
 import com.pbl6.music.mapper.UserMapper;
 import com.pbl6.music.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
-import java.util.UUID;
 
 @Service
 @Transactional

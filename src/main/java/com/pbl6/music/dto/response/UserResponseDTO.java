@@ -19,6 +19,7 @@ public class UserResponseDTO implements Serializable {
      private String email;
      private String fullName;
      private String phoneNumber;
-     private String address;
+//     private String address;
      private String role;
+     Long WalletId;
 }

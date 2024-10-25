@@ -11,13 +11,13 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-
+   @Mapping(source = "wallet.walletId", target = "WalletId")
     UserResponseDTO toDTO(UserEntity user);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "createdAt", expression = "java(new java.util.Date())")
     @Mapping(target = "role", constant = "ROLE_USER")
     @Mapping(target = "purchases", ignore = true)
+
     UserEntity toEntity(UserRegisterRequest request);
 
     List<UserResponseDTO> toDTOList(List<UserEntity> users);
