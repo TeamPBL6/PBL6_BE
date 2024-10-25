@@ -4,8 +4,10 @@ import com.pbl6.music.dto.request.LoginRequestDTO;
 import com.pbl6.music.dto.request.UserRegisterRequest;
 import com.pbl6.music.dto.response.AuthenticationResponse;
 import com.pbl6.music.entity.UserEntity;
+import com.pbl6.music.entity.Wallet;
 import com.pbl6.music.mapper.UserMapper;
 import com.pbl6.music.repository.UserRepository;
+import com.pbl6.music.repository.WalletRepository;
 import com.pbl6.music.util.AppException;
 import com.pbl6.music.util.ErrorCode;
 import jakarta.transaction.Transactional;
@@ -20,7 +22,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Collections;
+import java.util.Date;
 
 @Service
 @Transactional
@@ -31,6 +37,8 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    @Autowired
+    private WalletRepository walletRepository;
 
     @Autowired
     public AuthenticationService(
@@ -56,9 +64,16 @@ public class AuthenticationService {
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
+        Wallet wallet = new Wallet();
+        wallet.setBalance(BigDecimal.ZERO); // Số dư mặc định
+        wallet.setUpdatedAt(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+
+        // Lưu ví vào cơ sở dữ liệu
+        wallet = walletRepository.save(wallet); // Lưu ví mới tạo
 
         UserEntity user = userMapper.toEntity(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setWallet(wallet);
 
         user = userRepository.save(user);
 
@@ -72,7 +87,6 @@ public class AuthenticationService {
 
     public AuthenticationResponse login(LoginRequestDTO request) {
         try {
-            // Xác thực tên đăng nhập và mật khẩu
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getUsername(),
@@ -80,24 +94,19 @@ public class AuthenticationService {
                     )
             );
         } catch (AuthenticationException e) {
-            // Ném ngoại lệ có thông báo rõ ràng khi xác thực thất bại
             throw new BadCredentialsException("Invalid username or password");
         }
 
-        // Tìm người dùng trong cơ sở dữ liệu
         UserEntity user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
 
-        // Tạo token JWT cho người dùng
         String token = jwtService.generateToken(loadUserDetails(user));
 
-        // Trả về đối tượng AuthenticationResponse chứa token và thông tin người dùng
         return AuthenticationResponse.builder()
                 .token(token)
                 .user(userMapper.toDTO(user))
                 .build();
     }
-
 
     private UserDetails loadUserDetails(UserEntity user) {
         return new org.springframework.security.core.userdetails.User(
