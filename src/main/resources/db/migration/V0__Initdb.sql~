@@ -64,7 +64,7 @@ CREATE TABLE wallets
 (
     wallet_id  BIGINT AUTO_INCREMENT NOT NULL,
     user_id    BIGINT                NOT NULL,
-    balance    DECIMAL                NOT NULL,
+    balance    DOUBLE                NOT NULL,
     updated_at datetime              NOT NULL,
     CONSTRAINT pk_wallets PRIMARY KEY (wallet_id)
 );

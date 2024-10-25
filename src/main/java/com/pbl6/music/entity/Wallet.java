@@ -1,8 +1,10 @@
 package com.pbl6.music.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
 
@@ -22,10 +24,11 @@ public class Wallet {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private UserEntity user; // Mỗi người dùng có một ví
 
     @Column(name = "balance", nullable = false)
-    private Double balance; // Số dư ví
+    private BigDecimal balance; // Số dư ví
 
     @Column(name = "updated_at", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)

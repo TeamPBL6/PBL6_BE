@@ -4,8 +4,10 @@ import com.pbl6.music.dto.request.LoginRequestDTO;
 import com.pbl6.music.dto.request.UserRegisterRequest;
 import com.pbl6.music.dto.response.AuthenticationResponse;
 import com.pbl6.music.entity.UserEntity;
+import com.pbl6.music.entity.Wallet;
 import com.pbl6.music.mapper.UserMapper;
 import com.pbl6.music.repository.UserRepository;
+import com.pbl6.music.repository.WalletRepository;
 import com.pbl6.music.util.AppException;
 import com.pbl6.music.util.ErrorCode;
 import jakarta.transaction.Transactional;
@@ -20,7 +22,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Collections;
+import java.util.Date;
 
 @Service
 @Transactional
@@ -31,6 +37,8 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    @Autowired
+    private WalletRepository walletRepository;
 
     @Autowired
     public AuthenticationService(
@@ -47,20 +55,33 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse register(UserRegisterRequest request) {
-        // Check if username exists
+        // Kiểm tra nếu tên người dùng đã tồn tại
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new RuntimeException("Username already exists");
         }
 
-        // Check if email exists
+        // Kiểm tra nếu email đã tồn tại
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
 
+        // Tạo người dùng mới
         UserEntity user = userMapper.toEntity(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
-        user = userRepository.save(user);
+        // Lưu người dùng vào cơ sở dữ liệu trước
+        user = userRepository.save(user); // Lưu người dùng trước để có ID
+
+        // Tạo ví mới với số dư mặc định là 0
+        Wallet wallet = new Wallet();
+        wallet.setBalance(BigDecimal.ZERO); // Số dư mặc định
+        wallet.setUpdatedAt(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant())); // Thiết lập thời gian hiện tại cho updated_at
+
+        // Liên kết ví với người dùng
+        wallet.setUser(user); // Thiết lập user cho wallet
+
+        // Lưu ví vào cơ sở dữ liệu
+        walletRepository.save(wallet); // Lưu ví mới tạo
 
         String token = jwtService.generateToken(loadUserDetails(user));
 
@@ -69,6 +90,7 @@ public class AuthenticationService {
                 .user(userMapper.toDTO(user))
                 .build();
     }
+
 
     public AuthenticationResponse login(LoginRequestDTO request) {
         try {
