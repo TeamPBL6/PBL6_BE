@@ -2,10 +2,7 @@ package com.pbl6.music.service.impl;
 
 import com.pbl6.music.dto.request.PurchaseRequest;
 import com.pbl6.music.dto.response.PurchaseResponse;
-import com.pbl6.music.entity.Music;
-import com.pbl6.music.entity.Purchase;
-import com.pbl6.music.entity.UserEntity;
-import com.pbl6.music.entity.Wallet;
+import com.pbl6.music.entity.*;
 import com.pbl6.music.mapper.PurchaseMapper;
 import com.pbl6.music.repository.MusicRepository;
 import com.pbl6.music.repository.PurchaseRepository;
@@ -81,6 +78,30 @@ public class WalletServiceImpl implements WalletService {
         musicRepository.save(music); // Lưu cập nhật nhạc
 
         return PurchaseMapper.INSTANCE.toPurchaseResponse(buyer.getWallet());
+    }
+
+    @Override
+    public void updateBalance(Long walletId, BigDecimal amount, BalanceUpdateType type) {
+        Wallet wallet = walletRepository.findById(walletId)
+                .orElseThrow(() -> new RuntimeException("Wallet not found"));
+
+        BigDecimal newBalance;
+        switch (type) {
+            case DEPOSIT:
+                newBalance = wallet.getBalance().add(amount);
+                break;
+            case WITHDRAW:
+                newBalance = wallet.getBalance().subtract(amount);
+                if (newBalance.compareTo(BigDecimal.ZERO) < 0) {
+                    throw new RuntimeException("Insufficient balance");
+                }
+                break;
+            default:
+                throw new RuntimeException("Invalid update type");
+        }
+
+        wallet.setBalance(newBalance);
+        walletRepository.save(wallet);
     }
 
 }

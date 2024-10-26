@@ -74,3 +74,13 @@ ALTER TABLE wallets
 
 ALTER TABLE wallets
     ADD CONSTRAINT FK_WALLETS_ON_USER FOREIGN KEY (user_id) REFERENCES user (id);
+CREATE TABLE transaction_history
+(
+    id              BIGINT AUTO_INCREMENT NOT NULL,
+    wallet_id       VARCHAR(255)          NULL,
+    amount          DECIMAL               NULL,
+    transaction_ref VARCHAR(255)          NULL,
+    status          VARCHAR(255)          NULL,
+    created_at      datetime              NULL,
+    CONSTRAINT pk_transactionhistory PRIMARY KEY (id)
+);
