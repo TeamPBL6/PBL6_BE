@@ -16,7 +16,5 @@ public interface WalletService {
     Wallet updateWalletBalance(Long id, BigDecimal amount);
      PurchaseResponse purchaseMusic(PurchaseRequest request);
 
-
-
-    void updateBalance(Long walletId, BigDecimal amount, BalanceUpdateType type);
+    void updateBalance(String walletId, BigDecimal amount, BalanceUpdateType balanceUpdateType);
 }

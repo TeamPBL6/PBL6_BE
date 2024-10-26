@@ -20,7 +20,7 @@ spring.jpa.show-sql=true
 vnpay.tmnCode=I2NVFZ38
 vnpay.hashSecret=KX9RZIOTYJQP78JXUF70C0FRWH5BU3G4
 vnpay.payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-vnpay.return-url=http://localhost:8181/api/payment/payment-callback
+
 
 # JWT Configuration
 app.jwt.secret=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970

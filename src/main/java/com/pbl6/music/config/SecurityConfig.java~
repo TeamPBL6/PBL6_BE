@@ -42,7 +42,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/musics/**").permitAll()
-//                        .requestMatchers("/api/wallet/**").authenticated()
+                        .requestMatchers("/api/wallet/**").permitAll()
+                        .requestMatchers("/api/payment/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

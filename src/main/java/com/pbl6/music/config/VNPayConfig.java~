@@ -62,8 +62,8 @@ private String tmnCode;
     @Value("${vnpay.hashSecret}")
     private String hashSecret;
 
-    @Value("${vnpay.return-url}")
-    private String returnUrl;
+//    @Value("${vnpay.returnUrl}")
+//    private String returnUrl;
 
     @Value("${vnpay.payUrl}")
     private String payUrl;
@@ -76,9 +76,9 @@ private String tmnCode;
         return hashSecret;
     }
 
-    public String getReturnUrl() {
-        return returnUrl;
-    }
+//    public String getReturnUrl() {
+//        return returnUrl;
+//    }
 
     public String getPayUrl() {
         return payUrl;
