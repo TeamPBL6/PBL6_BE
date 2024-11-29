@@ -15,7 +15,7 @@ public interface UserMapper {
     UserResponseDTO toDTO(UserEntity user);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "role", constant = "ROLE_USER")
+    @Mapping(target = "role", constant = "USER")
     @Mapping(target = "purchases", ignore = true)
 
     UserEntity toEntity(UserRegisterRequest request);

@@ -44,7 +44,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/musics/**").permitAll()
                         .requestMatchers("/api/musics/download/**").permitAll()
                         .requestMatchers("/api/wallet/**").permitAll()
-                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/generate-music/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

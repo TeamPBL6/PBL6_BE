@@ -43,7 +43,7 @@ public class MusicController {
     }
     @GetMapping("/download/{filename:.+}")
     public ResponseEntity<Resource> getMusic(@PathVariable String filename) {
-        String filePath = "file:///D:/resfull/PBL6/PBL6_BE/src/main/resources/Music/" + filename + ".mp3";
+        String filePath = "file:///D:/resfull/PBL6/PBL6_BE/Music/" + filename + ".mp3";
         Resource resource = resourceLoader.getResource(filePath);
 
         if (!resource.exists()) {
